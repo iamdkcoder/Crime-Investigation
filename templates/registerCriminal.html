@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Seotech</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="static/css/responsive.css" rel="stylesheet" />
+  <link href="static/css/registerForm.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Seotech
+            </span>
+          </a>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('registerCriminal')}}"> Register </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('findCriminal')}}"> Find Criminal </a>
+                </li>
+
+              </ul>
+            </div>
+            <div class="quote_btn-container ">
+              <a href="">
+                <img src="static/images/call.png" alt="">
+                <span>
+                  Call : + 01 1234567890
+                </span>
+              </a>
+
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+  <!-- alert after submission starts -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <br>
+  <br>
+  <br>
+  <!-- alert after submission ends -->
+  <!-- about section -->
+
+  <section class="about_section ">
+    <form method="post" enctype="multipart/form-data" action="/registerCriminal">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="national_id">national_id:</label>
+        <input type="number" id="national_id" name="national_id" required>
+      </div>
+      <div>
+        <label for="date_of_birth">DOB:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" required>
+      </div>
+      <div>
+        <label for="birthmark">birthmark:</label>
+        <input type="text" id="birthmark" name="birthmark" required>
+      </div>
+      <div>
+        <label for="front_view">Front Profile:</label>
+        <input type="file" id="front_view" name="front_view" accept="image/*" required>
+      </div>
+      <div>
+        <label for="left_view">Left Profile:</label>
+        <input type="file" id="left_view" name="left_view" accept="image/*" required>
+      </div>
+      <div>
+        <label for="right_view">Right Profile:</label>
+        <input type="file" id="right_view" name="right_view" accept="image/*" required>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- end about section -->
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="footer_bg">
+
+    <!-- info section -->
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info_logo">
+              <h3>
+                Seotech
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor indidunt ut labore et
+                dolore magna
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_links">
+              <h4>
+                BASIC LINKS
+              </h4>
+              <ul class="  ">
+                <li class=" ">
+                  <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="active">
+                  <a class="" href="about.html"> About</a>
+                </li>
+                <li class="">
+                  <a class="" href="service.html"> Services </a>
+                </li>
+                <li class="">
+                  <a class="" href="#contactLink">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <h4>
+                CONTACT DETAILS
+              </h4>
+              <a href="">
+                <div class="img-box">
+                  <img src="static/images/telephone-white.png" width="12px" alt="">
+                </div>
+                <p>
+                  +01 1234567890
+                </p>
+              </a>
+              <a href="">
+                <div class="img-box">
+                  <img src="static/images/envelope-white.png" width="18px" alt="">
+                </div>
+                <p>
+                  demo@gmail.com
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_form ">
+              <h4>
+                NEWSLETTER
+              </h4>
+              <form action="">
+                <input type="email" placeholder="Enter your email">
+                <button>
+                  Subscribe
+                </button>
+              </form>
+              <div class="social_box">
+                <a href="">
+                  <img src="static/images/info-fb.png" alt="">
+                </a>
+                <a href="">
+                  <img src="static/images/info-twitter.png" alt="">
+                </a>
+                <a href="">
+                  <img src="static/images/info-linkedin.png" alt="">
+                </a>
+                <a href="">
+                  <img src="static/images/info-youtube.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info_section -->
+
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Free Html Templates</a>
+        </p>
+      </div>
+    </section>
+    <!-- footer section -->
+
+  </div>
+
+  <script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="static/js/bootstrap.js"></script>
+  <script type="text/javascript" src="static/js/custom.js"></script>
+
+
+</body>
+
+</html>

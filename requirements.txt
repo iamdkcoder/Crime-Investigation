@@ -1,0 +1,6 @@
+Pillow
+Flask
+tensorflow>=2.0.0
+opencv-python
+Flask-SQLAlchemy
+mysqlclient
